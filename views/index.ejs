@@ -1,0 +1,193 @@
+<div class="row d-flex justify-content-center mt-5">
+    <div class="col-md-10">
+        <div class="container mx-auto p-6">
+            <h1 class="bg-primary text-white display-4 font-weight-bold mb-4 text-center header">API Documentation</h1>
+          
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center" aria-current="true" id="satu" onClick="tampil('satu','1','plus1')">
+                <div>
+                    <span class="btn btn-primary badge">GET</span> http://localhost:3000/api/posts
+                  </div> 
+                <span class="area" id="plus1">+</span>
+              </li>
+              
+              <ul class="hidden" id="1">
+                <li>
+                  <!-- Get All Posts -->
+                  <div class="mb-4 p-4 bg-light rounded shadow">
+                    <h2 class="h3 font-weight-semibold mb-2 text-primary">Get All Posts</h2>
+                    <p class="mb-2">
+                      <strong>Endpoint:</strong> <span class="text-primary"><span class="btn">GET</span> http://localhost:3000/api/posts</span>
+                    </p>
+                    <p class="mb-2"><strong>Description:</strong> Retrieve a list of all posts.</p>
+                    <div class="bg-secondary text-light p-3 rounded mt-3">
+                      <p><strong>Example Request:</strong></p>
+                      <pre class="bg-dark text-light p-2 rounded"><code>GET /http://localhost:3000/api/posts</code></pre>
+                      <p class="mt-3"><strong>Response:</strong></p>
+                      <pre class="bg-dark text-light p-2 rounded"><code>[
+            {
+              "id": "1",
+              "title": "First Post",
+              "content": "This is the content of the first post."
+            },
+            ...
+          ]</code></pre>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+          
+              <li id="dua" class="list-group-item d-flex justify-content-between align-items-center" onClick="tampil('dua','2','plus2')">
+                <div>
+                    <span class="btn btn-primary badge">GET</span> http://localhost:3000/api/posts/{id}
+                </div>
+                 <span class="area" id="plus2">+</span>
+              </li>
+              <ul class="hidden" id="2">
+                <li>
+                  <!-- Get Post by ID -->
+                  <div class="mb-4 p-4 bg-light rounded shadow">
+                    <h2 class="h3 font-weight-semibold mb-2 text-primary">Get Post by ID</h2>
+                    <p class="mb-2">
+                      <strong>Endpoint:</strong> <span class="text-primary">GET http://localhost:3000/api/posts/:id</span>
+                    </p>
+                    <p class="mb-2"><strong>Description:</strong> Retrieve a single post by its ID.</p>
+                    <p class="mb-2"><strong>Parameters:</strong></p>
+                    <ul class="list-unstyled mb-4">
+                      <li><strong>id</strong> (string): The ID of the post.</li>
+                    </ul>
+                    <div class="bg-secondary text-light p-3 rounded mt-3">
+                      <p><strong>Example Request:</strong></p>
+                      <pre class="bg-dark text-light p-2 rounded"><code>GET http://localhost:3000/api/posts/1</code></pre>
+                      <p class="mt-3"><strong>Response:</strong></p>
+                      <pre class="bg-dark text-light p-2 rounded"><code>{
+            "id": "1",
+            "title": "First Post",
+            "content": "This is the content of the first post."
+          }</code></pre>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+          
+              <li id="tiga" class="list-group-item d-flex justify-content-between align-items-center" onClick="tampil('tiga','3','plus3')">
+                <div>
+                    <span class="btn btn-warning badge">POST</span> http://localhost:3000/api/posts 
+                </div>
+                <span class="area" id="plus3">+</span>
+              </li>
+              <ul class="hidden" id="3">
+                <li>
+                  <!-- Create Post -->
+                  <div class="mb-4 p-4 bg-light rounded shadow">
+                    <h2 class="h3 font-weight-semibold mb-2 text-primary">Create Post</h2>
+                    <p class="mb-2">
+                      <strong>Endpoint:</strong> <span class="text-primary">POST http://localhost:3000/api/posts</span>
+                    </p>
+                    <p class="mb-2"><strong>Description:</strong> Create a new post.</p>
+                    <p class="mb-2"><strong>Body:</strong></p>
+                    <ul class="list-unstyled mb-4">
+                      <li><strong>title</strong> (string): The title of the post.</li>
+                      <li><strong>content</strong> (string): The content of the post.</li>
+                    </ul>
+                    <div class="bg-secondary text-light p-3 rounded mt-3">
+                      <p><strong>Example Request:</strong></p>
+                      <pre class="bg-dark text-light p-2 rounded"><code>POST /http://localhost:3000/api/posts
+          {
+            "title": "New Post",
+            "content": "This is the content of the new post."
+          }</code></pre>
+                      <p class="mt-3"><strong>Response:</strong></p>
+                      <pre class="bg-dark text-light p-2 rounded"><code>{
+            "id": "2",
+            "title": "New Post",
+            "content": "This is the content of the new post."
+          }</code></pre>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+          
+              <li id="empat" class="list-group-item d-flex justify-content-between align-items-center" onClick="tampil('empat','4','plus4')">
+                <div>
+                    <span class="btn btn-success badge">PUT</span> http://localhost:3000/api/posts/{id}
+                </div>
+                 <span class="area" id="plus4">+</span>
+              </li>
+              <ul class="hidden" id="4">
+                <li>
+                  <!-- Update Post -->
+                  <div class="mb-4 p-4 bg-light rounded shadow">
+                    <h2 class="h3 font-weight-semibold mb-2 text-primary">Update Post</h2>
+                    <p class="mb-2">
+                      <strong>Endpoint:</strong> <span class="text-primary">PUT http://localhost:3000/api/posts/:id</span>
+                    </p>
+                    <p class="mb-2"><strong>Description:</strong> Update an existing post by its ID.</p>
+                    <p class="mb-2"><strong>Parameters:</strong></p>
+                    <ul class="list-unstyled mb-4">
+                      <li><strong>id</strong> (string): The ID of the post.</li>
+                    </ul>
+                    <p class="mb-2"><strong>Body:</strong></p>
+                    <ul class="list-unstyled mb-4">
+                      <li><strong>title</strong> (string): The new title of the post.</li>
+                      <li><strong>content</strong> (string): The new content of the post.</li>
+                    </ul>
+                    <div class="bg-secondary text-light p-3 rounded mt-3">
+                      <p><strong>Example Request:</strong></p>
+                      <pre class="bg-dark text-light p-2 rounded"><code>PUT http://localhost:3000/api/posts/1
+          {
+            "title": "Updated Post",
+            "content": "This is the updated content."
+          }</code></pre>
+                      <p class="mt-3"><strong>Response:</strong></p>
+                      <pre class="bg-dark text-light p-2 rounded"><code>{
+            "id": "1",
+            "title": "Updated Post",
+            "content": "This is the updated content."
+          }</code></pre>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+          
+              <li id="lima" class="list-group-item d-flex justify-content-between align-items-center" onClick="tampil('lima','5','plus5')">
+                <div>
+                    <span class="btn btn-danger badge">DELETE</span> http://localhost:3000/api/posts/{id}
+                </div>
+                 <span class="area" id="plus5">+</span>
+              </li>
+              <ul class="hidden" id="5">
+                <li>
+                  <!-- Delete Post -->
+                  <div class="mb-4 p-4 bg-light rounded shadow">
+                    <h2 class="h3 font-weight-semibold mb-2 text-primary">Delete Post</h2>
+                    <p class="mb-2">
+                      <strong>Endpoint:</strong> <span class="text-primary">DELETE http://localhost:3000/api/posts/:id</span>
+                    </p>
+                    <p class="mb-2"><strong>Description:</strong> Delete a post by its ID.</p>
+                    <p class="mb-2"><strong>Parameters:</strong></p>
+                    <ul class="list-unstyled mb-4">
+                      <li><strong>id</strong> (string): The ID of the post.</li>
+                    </ul>
+                    <div class="bg-secondary text-light p-3 rounded mt-3">
+                      <p><strong>Example Request:</strong></p>
+                      <pre class="bg-dark text-light p-2 rounded"><code>DELETE /http://localhost:3000/api/posts/1</code></pre>
+                      <p class="mt-3"><strong>Response:</strong></p>
+                      <pre class="bg-dark text-light p-2 rounded"><code>{
+            "message": "Post deleted"
+          }</code></pre>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </ul>
+          
+            <footer class="text-center py-4 ">
+              <p class="text-muted footer" style="color: white;">&copy; 2024 Your Company. All rights reserved.</p>
+              <p>anjing lah</p>
+            </footer>
+          </div>
+    </div>
+</div>
+
+  
